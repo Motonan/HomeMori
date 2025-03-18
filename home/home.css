@@ -1,0 +1,585 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  background-image: url('背景.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+}
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ページの間に線を入れる */
+section {
+  border-bottom: 4px solid rgb(125, 125, 125);  
+  padding: 50px 20px;         
+  width: 100%;                  
+  box-sizing: border-box;        
+}
+
+/* 各ページの背景色 */
+#page1, #page2, #page3, #page4 {
+  background-color: rgba(200, 225, 255, 0.9); 
+}
+
+h2 {
+  font-size: 65px !important;
+  margin-top: -150px !important;
+}
+
+/*==================================================================================================*/
+/* ナビゲーションバー全体のスタイル */
+
+/* ナビゲーションバー */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(15, 10, 30); 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px 40px;
+  box-sizing: border-box; 
+  height: 80px;
+  z-index: 9999; 
+  border-bottom: 5px solid rgb(220, 150, 255); 
+}
+
+/* テキスト */
+.nav-left {
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* リスト */
+ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end; 
+  margin-left: auto; 
+}
+ul li {
+  background-color: rgb(30, 20, 50);  
+  padding: 5px 15px;
+  border: 2px solid rgb(200, 100, 255); 
+}
+ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  font-weight: bold;
+}
+ul li:hover {
+  background-color: rgb(225, 200, 255, 0.7);
+}
+
+/* ページリンク */
+#page1, #page2, #page3, #page4 {
+  padding-top: 250px!important;
+}
+
+/* ハンバーガーナビゲーションバー */
+.nav-toggle {
+  display: none; 
+  background-color: rgb(30, 20, 50); 
+  border: 2px solid rgb(200, 100, 255); 
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+/* ハンバーガー表示 */
+.nav-toggle div {
+  background-color: white;
+  height: 4px;
+  width: 30px;
+  margin: 6px 0; 
+}
+.nav-toggle:hover {
+  background-color: rgb(225, 200, 255, 0.7);
+}
+
+@media (max-width: 1150px) {
+  .nav-left {
+      font-size: 30px;
+  }
+}
+
+/* ハンバーガーメニュー表示 */
+@media (max-width: 1000px) {
+  .nav-toggle {
+    display: block;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+  }
+
+  ul {
+    display: none; 
+    flex-direction: column; 
+    width: 100%; 
+    background-color: rgb(15, 10, 30);
+    position: absolute;
+    top: 80px; 
+    left: 0;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border-bottom: 5px solid rgb(220, 150, 255); 
+  }
+
+  ul.active {
+    display: flex; 
+  }
+/* ハンバーガーリスト */
+  ul li {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto; 
+    background-color: rgb(30, 20, 50);
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-left {
+      font-size: 25px;
+  }
+}
+/*==================================================================================================*/
+/* ページ1全体のスタイル */
+#page1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  text-align: center;
+  margin-top: -200px; 
+  padding-top: 0;   
+}
+
+/* メインタイトル */
+#main-title-1{
+  font-size: 100px;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  top: 10%; 
+}
+#main-title-2{
+  margin-top: 300px;
+  font-size: 80px;
+  font-weight: bold;
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: -20%; 
+}
+
+@media (max-width: 1100px) {
+  #main-title-1 {
+      font-size: 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  #main-title-1 {
+    display: none;
+  }
+  #main-title-2 {
+    display: inline;
+  }
+}
+@media (max-width: 700px) {
+  #main-title-2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 500px) {
+  #main-title-2 {
+    font-size: 55px;
+  }
+}
+
+/* サブタイトル */
+#sub-title-1{
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  position: absolute;
+  top: 55%; 
+}
+
+#sub-title-2{
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  display: none;
+  position: absolute;
+  top: 45%; 
+}
+#sub-title-3{
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  display: none;
+  position: absolute;
+  top: 35%; 
+}
+@media (max-width: 1200px) {
+  #sub-title-1 {
+    display: none;  
+  }
+  #sub-title-2 {
+    display: inline;  
+  }
+}
+@media (max-width: 650px) {
+  #sub-title-2 {
+    display: none;  
+  }
+  #sub-title-3 {
+    display: inline;  
+  }
+}
+/*==================================================================================================*/
+/* ページ2全体のスタイル */
+#page2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* レイアウト */
+#page2-layout {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* 職務ボックス */
+.company-box {
+  background-color: rgb(225, 255, 255); 
+  border: 3px solid rgb(0, 155, 155);
+  border-radius: 15px;
+  padding: 20px;
+  width: 45%; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 300px; 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 1列にする */
+@media screen and (max-width: 1100px) {
+  .company-box {
+      width: 100%; 
+      margin: 0 auto; 
+  }
+  .company-header {
+    width: 90%;
+    margin: 0 auto; 
+    text-align: center; 
+  }  
+  .content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    width: 100%;
+  }
+
+  .company-details {
+    flex: 1;
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .company-box img {
+    width: 200px; 
+    height: auto;
+    border-radius: 10px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .content {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .company-box img {
+    margin-left: 0; 
+    margin-top: 10px; 
+  }
+}
+
+/* 経歴表示 */
+.company-header {
+  background-color: rgb(200, 255, 255);
+  border: 3px solid rgb(0, 200, 200);
+  width: 95%;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* 職場名 */
+.company-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(0, 100, 200);
+  word-wrap: break-word;
+  text-align: center;
+}
+/* 年代 */  
+.company-year {
+  font-size: 20px;
+  color: rgb(50, 150, 250);
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* 内容 */
+.company-details {
+  text-align: left;
+  font-size: 20px;
+} 
+.company-details .detail-item {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+.company-details .detail-item:not(.no-bullet)::before {
+  content: "・";
+  margin-right: 5px;
+} 
+.company-box img {
+  width: 350px; 
+  height: auto; 
+  border-radius: 10px;  
+  margin-top: 5px; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*==================================================================================================*/
+/* ページ3のレイアウト */
+#page3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ボックス */
+.large-box {
+  background-color: rgb(225, 225, 255) !important; 
+  border-radius: 10px; /* 角を丸く */
+  border: 3px solid rgb(0, 0, 255) !important; 
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box; 
+  width: 100%;
+  text-align: center;
+}
+
+h3 {
+  font-size: 60px !important;
+  margin-bottom: 15px;
+  margin-top: -5px; 
+}
+h4 {
+  font-size: 50px !important;
+  color: #3819ec; 
+  font-weight: bold; 
+  line-height: 1; 
+  margin: 0;
+   margin-bottom: 20px; 
+}
+
+/* ソフトボックス */
+.small-box-container {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px;
+  justify-items: center;
+  align-items: start; 
+}
+.small-box {
+  width: 100%; 
+  max-width: 500px; 
+  padding: 20px;
+  background-color: rgb(200, 235, 255) !important;
+  border: 3px solid rgb(0, 155, 255); 
+  text-align: center; 
+  border-radius: 10px; 
+  box-sizing: border-box; 
+}
+
+/* 画面が狭くなったら1列 */
+@media screen and (max-width: 800px) {
+  .small-box-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ソフト名 */
+.software-list {
+  display: block; 
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.software-item {
+  display: block; 
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 10px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 800px) {
+  .software-list {
+    display: block; 
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 20px; 
+  }
+}
+
+/* 言語 */
+.language-list {
+  display: grid;
+   grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+.language-item {
+  display: block;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1000px) {
+  .language-list {
+    grid-template-columns: repeat(4, 1fr); /* 中サイズ時は4列 */
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .language-list {
+    grid-template-columns: repeat(2, 1fr); /* 小サイズ時は2列 */
+  }
+}
+
+/*==================================================================================================*/
+/* ページ4の基本スタイル */
+#page4 {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/*  ビデオグリッド */
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 10px; 
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+.video-box {
+  background-color: rgb(235, 255, 255);
+  border-radius: 15px;
+  border: 3px solid #8a2be2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  width: 350px!important;
+}
+/*  動画のスタイル */
+.video-box iframe {
+  width: 100%;
+  height: 230px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.video-box video {
+  width: 100%;          
+  height: auto;         
+}
+
+.video-box h3 {
+  font-size: 40px !important;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.video-box p {
+  font-size: 20px;
+  color: #000000;
+  font-weight: bold;
+}
+
+@media (max-width: 1400px) {  
+  .video-grid {
+    justify-content: center; 
+  }
+}
+
+@media (max-width: 800px) {  
+  .video-grid {
+    flex-direction: column; 
+    align-items: center; 
+  }
+}
+/*==================================================================================================*/
+
+h2 {
+  font-size: 65px !important;
+  margin-top: -700 !important;
+}
